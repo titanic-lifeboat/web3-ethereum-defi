@@ -277,7 +277,7 @@ def extract_events(
                 # Make sure we use lowercase string notation everywhere
                 event_signature = event_signature.hex()
 
-            log["event"] = filter.topics[event_signature]
+            # log["event"] = filter.topics[event_signature]
 
             # Can be hex string or integer (EthereumTester)
             log["blockNumber"] = convert_jsonrpc_value_to_int(log["blockNumber"])
