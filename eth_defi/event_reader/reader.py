@@ -229,12 +229,12 @@ def extract_events(
     if reorg_mon:
         assert extract_timestamps is None, "You cannot pass both reorg_mon and extract_timestamps"
 
-    topics = list(filter.topics.keys())
+    # topics = list(filter.topics.keys())
 
     # https://www.quicknode.com/docs/ethereum/eth_getLogs
     # https://docs.alchemy.com/alchemy/guides/eth_getlogs
     filter_params = {
-        "topics": [topics],  # JSON-RPC has totally braindead API to say how to do OR event lookup
+        "topics": filter.topics,  # JSON-RPC has totally braindead API to say how to do OR event lookup
         "fromBlock": hex(start_block),
         "toBlock": hex(end_block),
     }
